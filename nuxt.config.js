@@ -24,7 +24,7 @@ export default {
    * 设置端口
    */
   server: {
-    port: 4000 // default: 3000
+    port: 3002 // default: 3000
   },
   /*
    ** Global CSS
