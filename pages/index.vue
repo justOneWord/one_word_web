@@ -86,7 +86,7 @@ export default class IndexPage extends Vue {
     ]
   }
 
-  $postRepository: any
+  $api: any
 
   get formRef(): Vue & { validate: () => boolean } {
     return this.$refs.form as Vue & { validate: () => boolean }
@@ -97,7 +97,7 @@ export default class IndexPage extends Vue {
     const verify: boolean = await this.formRef.validate()
     if (verify) {
       try {
-        const { code, msg, data } = await self.$postRepository.index({
+        const { code, msg, data } = await self.$api.index({
           ...this.form
         })
         if (code === 0) {

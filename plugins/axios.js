@@ -13,7 +13,7 @@ export default function({ $axios, store }) {
   })
 
   $axios.onError((error) => {
-    const code = parseInt(error.response && error.response.status)
+    store.commit('showloading', false)
     return Promise.reject(error)
   })
 }
