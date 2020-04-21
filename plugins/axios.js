@@ -8,7 +8,7 @@ export default function({ $axios, store }) {
   $axios.onResponse((response) => {
     store.commit('showloading', false)
     if (response.status === 200) {
-      return response
+      return response.data
     }
   })
 
